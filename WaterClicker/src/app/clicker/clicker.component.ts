@@ -39,9 +39,14 @@ export class ClickerComponent {
     if (imageContainer) {
       this.renderer.appendChild(imageContainer, newImage);
 
+      let currentY = y;
+      const interval = setInterval(() => {
+        currentY += 2;
+        this.renderer.setStyle(newImage, 'top', `${currentY}px`);
+      }, 20);
       setTimeout(() => {
         this.renderer.removeChild(imageContainer, newImage);
-      }, 2000);
+      }, 500);
     }
   }
 }
