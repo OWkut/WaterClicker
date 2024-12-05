@@ -8,6 +8,7 @@ import { Component,OnInit,HostListener } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  showSubmenu: boolean = false;
   torch: HTMLElement | null = null; 
 
   
@@ -28,4 +29,7 @@ export class HeaderComponent {
     }
   }
 
+  toggleSubmenu(): void {
+    this.showSubmenu = !this.showSubmenu;
+  }
 }
