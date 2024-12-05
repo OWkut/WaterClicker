@@ -1,34 +1,95 @@
 # WaterClicker
-## Eau
 ## Amélioration :
+### Eau :
 #### 1-Augmentation des courants marains
-    +20% de la prod d'eau
+    [ - 400 ]
+    +20% prod [Auto-Clicker]
     ( Obtenable 5 fois )
 #### 2-Agriculture
+    [ - 13 400 ]
     Débloque les fermes et le centre de collecte
-    -20% de la prod d'eau
+    -20% prod [Auto-Clicker]
 #### 3-Densité de l'eau
-    +50% de la prod de sang
-    +20% de la prod des clicks
-    ( Obtenable 5 fois )
+    [ - 429 050 ]
+    +50% prod [Auto-Clicker]
+    +20% prod [Click]
+    ( Obtenable 4 fois )
 #### 4-Centre d'épuration
+    [ - 764 000 ]
     Débloque l'épurateur
 #### 5-Plancton
-    +10 000 sang
+    [ - 2 485 000 ]
+    +15% prod [Auto-Clicker]
     Débloque le purificateur d'eau
 #### 6-Voyage vers Encelade
+    [ - 800 000 900 ]
     Débloque navette supersonique
 #### 7-Restauration après une marée noire
-    +60% de la d'eau
-    +30% de la prod de sang en eau
-    ( Obtenable 4 fois )
+    [ - 32 850 045 000 ]
+    +60% prod [Auto-Clicker]
+    +30% prod [Click]
+    ( Obtenable 3 fois )
 #### 8-Nétoyage des océans
-    +80% d'eau [Click + Prod]
+    [ - 187 548 000 000 ]
+    +80% prod [Click + Prod]
     ( Obtenable 2 fois )
 #### 9-Eau pur
+    [ - 545 000 000 000 ]
     +110% d'eau [Click + Prod]
+#### 10-Droit de l'eau
+    [ - 85 457 000 000 000 ]
+    Permet de débloqué "Corp Parfait"
+#### 11-Equilibre
+    [ - 999 999 999 999 999 999 999 ]
+    +infini [Click + Prod]
 
-### Auto-Clicker :
+### Sang :
+#### 1-Augmentation de la circulations sanguine
+    [ - 950 ]
+    +20% prod [Click]
+    ( Obtenable 5 fois )
+#### 2-Vitamine
+    [ - 80 000 ]
+    +1 200 /min
+    Débloque le purificateur d'air
+#### 3-Résistance de la peau
+    [ - 240 000 ]
+    +20% prod [Auto-Clicker]
+    +50% prod [Click]
+    ( Obtenable 5 fois )
+#### 4-Experience Interdite
+    [ - 1 200 000 ]
+    Débloque la transfusion
+#### 5-Eco-Agriculture
+    [ - 58 000 000 ]
+    Supprime le malus de Agriculture
+    +10% prod [Auto-Clicker]
+#### 6-Exo-squellette
+    [ - 286 000 000 ]
+    Débloque champ d'extermination de zombie
+#### 7-Cicatrisation des plaies
+    [ - 7 258 000 000 ]
+    +60% prod [Click]
+    +30% prod [Auto-Clicker]
+    ( Obtenable 4 fois )
+#### 8-Optimisation du corp
+    [ - 86 753 000 000 ]
+    +80% de sang [Click + Prod]
+    ( Obtenable 2 fois )
+#### 9-Corp parfait
+    [ - 980 000 000 000 ]
+    +110% de sang [Click + Prod]
+#### 10-Humain aquatique
+    [ - 60 980 000 000 000 ]
+    Débloque "Equilibre"
+#### 11-Equilibre
+    [ - 999 999 999 999 999 999 999 ]
+    +infini [Click + Prod]
+
+
+## Auto-Clicker :
+#### 0-Pipette
+    +0.1 eau /min
 #### 1-Saut
     +5 eau /min
 #### 2-Plongeur
@@ -82,6 +143,8 @@
     ( Obtenable 2 fois )
 #### 9-Corp parfait
     +110% de sang [Click + Prod]
+#### L'homme fusion avec l'eau
+    +infini [Auto-Clickers]
 
 ### Auto-Clicker :
 #### 1-Seringue
