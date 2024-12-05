@@ -1,4 +1,4 @@
-import { Component, Renderer2, OnInit } from '@angular/core';
+import { Component, Renderer2, OnInit,HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-clicker',
@@ -11,10 +11,16 @@ export class ClickerComponent implements OnInit {
   imageSource = '../../assets/Images/eau.png';
   score: number = 0;
   type: string = 'eau';
+  torch: HTMLElement | null = null;
 
   constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
+    this.torch = document.createElement('div');
+    this.torch.classList.add('torch');
+    this.torch.classList.toggle('dark-mode', true);
+    document.body.appendChild(this.torch);
+    document.body.classList.add('dark-mode')
     this.score = parseInt(localStorage.getItem('Gouttes') || '0', 10);
   }
 
@@ -66,6 +72,8 @@ export class ClickerComponent implements OnInit {
     return element;
   }
 
+  
+
   private animateElement(element: HTMLElement, container: HTMLElement, duration: number): void {
     let currentY = parseInt(window.getComputedStyle(element).top, 10);
 
@@ -79,6 +87,16 @@ export class ClickerComponent implements OnInit {
       this.renderer.removeChild(container, element);
     }, duration);
   }
+
+  @HostListener('mousemove', ['$event']) onMouseMove(event: MouseEvent): void {
+    if (this.torch) {
+      this.torch.style.left = `${event.pageX}px`;
+      this.torch.style.top = `${event.pageY}px`;
+    }
+    document.body.classList.add('light-area');
+  }
+
+
 
   private fadeOutElement(element: HTMLElement, container: HTMLElement, duration: number): void {
     setTimeout(() => {
