@@ -26,7 +26,7 @@ body {
   width: 100px; /* Taille de la torche */
   height: 100px;
   background-color: transparent;
-  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.9); /* Effet de trou */
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 1); /* Effet de trou */
   transform: translate(-50%, -50%);
   z-index: 1001; /* Toujours au-dessus du calque sombre */
   }
