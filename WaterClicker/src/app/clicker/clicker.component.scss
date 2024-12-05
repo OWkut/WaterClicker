@@ -4,7 +4,8 @@
   width: 500px;
   height: 500px;
   position: absolute;
-  left: calc(50% - 250px)
+  left: calc(50% - 250px);
+  z-index: 2;
 }
 
 .switch-mode {
@@ -64,4 +65,14 @@ input:checked+.slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+#goutte {
+  all: unset; 
+  position: absolute;
+  left: calc(50% - 250px);
+  top: 0;
+  width: 500px;
+  height: 500px;
+  z-index: 1; 
 }

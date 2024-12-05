@@ -1,4 +1,4 @@
-import { Component, Renderer2 } from '@angular/core';
+import { Component, Renderer2,OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-clicker',
@@ -9,6 +9,7 @@ import { Component, Renderer2 } from '@angular/core';
 })
 export class ClickerComponent {
   imageSource = '../../assets/Images/eau.png';
+  score: number = 0;
 
   toggleImage(event: Event): void {
     const isChecked = (event.target as HTMLInputElement).checked;
@@ -16,6 +17,21 @@ export class ClickerComponent {
     this.imageSource = isChecked
       ? '../../assets/Images/sang.png'
       : '../../assets/Images/eau.png';
+  }
+  ngOnInit(): void {
+    const savedScore = localStorage.getItem('Gouttes');
+    this.score = savedScore ? parseInt(savedScore, 10) : 0;
+  }
+
+  increment(): void {
+    this.score++;
+    this.saveScore();
+  }
+
+
+
+  saveScore(): void {
+    localStorage.setItem('Gouttes', this.score.toString());
   }
 
   constructor(private renderer: Renderer2) { }
@@ -43,7 +59,6 @@ export class ClickerComponent {
         this.renderer.removeChild(imageContainer, newImage);
       }, 2000);
     }
-  }
 }
 
-
+}
