@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'minecraft';
+  src: url('/assets/minecraft-enchantment.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: arial, Helvetica, sans-serif, sans-serif;
+}
+
 body {
   margin: 0px;
 }

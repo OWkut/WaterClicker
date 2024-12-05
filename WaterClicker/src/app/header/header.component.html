@@ -5,10 +5,10 @@
   </div>
 
   <div class="header-right">
-    <h2 (click)="toggleSubmenu()">Francais</h2>
+    <h2 (click)="toggleSubmenu()">{{ selectedOption }}</h2>
     <div class="submenu" [class.active]="showSubmenu">
-      <p>Minecraft</p>
-      <p class="active">Francais</p>
+      <p (click)="selectOption('Francais', 'sans-serif')">Francais</p>
+      <p (click)="selectOption('Minecraft', 'minecraft')">Minecraft</p>
     </div>
   </div>
 </header>

@@ -19,16 +19,22 @@ header {
   margin-right: 10px;
 }
 
-.header-right {
-  position: relative;
+.header-right h2 {
+  border: 1px solid #2196f3;
+  padding: 4px 20px;
+  margin: -4px -20px;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 20px;
+  border-radius: 10px;
 }
 
 .header-right .submenu {
   display: none;
   position: absolute;
-  top: 25px;
+  top: 48px;
   background-color: #fff;
-  right: -20px;
+  right: 40px;
   width: 140px;
   z-index: 10;
   border: 1px solid #2196f3;
@@ -43,18 +49,9 @@ header {
 
 .header-right .submenu p {
   padding: 0px 0px 0px 20px;
-  user-select: none;
-  cursor: pointer
+  cursor: pointer;
 }
 
-.header-right h2 {
-  border: 1px solid #2196f3;
-  padding: 4px 20px;
-  margin: -4px -20px;
-  font-weight: normal;
-  text-transform: uppercase;
-  font-size: 20px;
-  border-radius: 10px;
-  user-select: none;
-  cursor: pointer
+.header-right .submenu p:hover {
+  background-color: #f0f0f0;
 }
