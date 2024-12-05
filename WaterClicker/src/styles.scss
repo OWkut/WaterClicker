@@ -11,10 +11,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Couche sombre */
-    pointer-events: none; /* Pour ne pas bloquer les clics */
-    z-index: 1000; /* Au-dessus de tout */
-    mix-blend-mode: multiply; /* Permet des effets intéressants selon le fond */
+    background-color: rgba(0, 0, 0, 0.9); 
+    pointer-events: none; 
+    z-index: 1000; 
+    mix-blend-mode: multiply; 
     transition: background-color 0.3s ease-in-out;
   }
 
@@ -23,17 +23,17 @@ body {
     position: absolute;
   pointer-events: none;
   border-radius: 50%;
-  width: 100px; /* Taille de la torche */
+  width: 100px; 
   height: 100px;
   background-color: transparent;
-  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 1); /* Effet de trou */
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 1); 
   transform: translate(-50%, -50%);
-  z-index: 1001; /* Toujours au-dessus du calque sombre */
+  z-index: 1001;
   }
 
   body.dark-mode .torch {
-    box-shadow: none; /* Désactiver l'effet de trou en mode sombre */
-    background-color: rgba(255, 255, 255, 0.1); /* Facultatif : un léger effet */
+    box-shadow: none; 
+    background-color: rgba(255, 255, 255, 0.1); 
   }
 
   body.light-area .torch::after {
