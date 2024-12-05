@@ -3,9 +3,9 @@
     <input type="checkbox" (change)="toggleImage($event)">
     <span class="slider round"></span>
   </label>
-
+  <button>Light/Dark</button>
   <div class="main-container">
-    <img id="clicker-icone" [src]="imageSource" alt="goute d'eau" draggable="false" (click)="generateImage($event)" />
+    <button id="goutte" (click)="increment()"><img id="clicker-icone" [src]="imageSource" alt="goute d'eau" draggable="false" (click)="generateImage($event)" /></button>
     <div id="image-container"></div>
     <div class="upgrade-container">
     </div>
