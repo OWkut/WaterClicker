@@ -5,7 +5,9 @@
   </label>
   <button>Light/Dark</button>
   <div class="main-container">
-    <button id="goutte" (click)="increment()"><img id="clicker-icone" [src]="imageSource" alt="goute d'eau" draggable="false" (click)="generateImage($event)" /></button>
+    <button id="clicker-icone" (click)="increment()">
+      <img [src]="imageSource" alt="goute d'eau" draggable="false" (click)="generateImage($event,10)" />
+    </button>
     <div id="image-container"></div>
     <div class="upgrade-container">
     </div>
