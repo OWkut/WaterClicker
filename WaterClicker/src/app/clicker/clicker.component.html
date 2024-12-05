@@ -3,13 +3,24 @@
     <input type="checkbox" (change)="toggleImage($event)">
     <span class="slider round"></span>
   </label>
-  <button>Light/Dark</button>
   <div class="main-container">
+
+    <div id="counter-drop">
+      <img [src]="imageSource" alt="goute d'eau" draggable="false" (click)="generateImage($event,10)" />
+      <p>12</p>
+    </div>
+
     <button id="clicker-icone" (click)="increment()">
       <img [src]="imageSource" alt="goute d'eau" draggable="false" (click)="generateImage($event,10)" />
     </button>
     <div id="image-container"></div>
+
     <div class="upgrade-container">
+      <div class="upgrade-element">
+        <img src="../../assets/Images/eau2.png" />
+        <p>Text</p>
+        <strong>Prix</strong>
+      </div>
     </div>
 
   </div>

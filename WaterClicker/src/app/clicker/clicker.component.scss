@@ -4,14 +4,15 @@
   width: 500px;
   height: 500px;
   position: absolute;
-  left: calc(50% - 250px);
+  left: calc(50% - 325px);
+  top: 50px;
   z-index: 2;
   background: transparent;
   border: none;
 }
 
 .switch-mode {
-  position: relative;
+  position: absolute;
   display: inline-block;
   width: 60px;
   height: 34px;
@@ -93,4 +94,62 @@ input:checked+.slider:before {
   z-index: 1000;
   opacity: 1;
   transition: opacity 0.5s ease-out;
+}
+
+main {
+  background-color: #F4FEFE;
+}
+
+.main-container {
+  width: 100%;
+  display: grid;
+}
+
+.main-container .upgrade-container {
+  position: fixed;
+  height: 100%;
+  right: 0px;
+  width: 250px;
+  box-shadow: rgba(0, 0, 0, 0.435) 0px 12px 8px;
+}
+
+.upgrade-container .upgrade-element {
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+  margin: 20px 15px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -3px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.upgrade-container .upgrade-element strong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.upgrade-container .upgrade-element img {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+}
+
+#counter-drop {
+  position: absolute;
+  top: 10px;
+  display: flex;
+  width: 100px;
+  left: calc(50% - 125px);
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#counter-drop img {
+  width: 30px;
+  height: 30px;
 }
