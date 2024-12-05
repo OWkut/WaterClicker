@@ -1,1 +1,14 @@
-<img id="clicker-icone" src="../../assets/Images/eau.png" alt="goute d'eau" draggable="false" />
+<main>
+  <label class="switch-mode">
+    <input type="checkbox" (change)="toggleImage($event)">
+    <span class="slider round"></span>
+  </label>
+
+  <div class="main-container">
+    <img id="clicker-icone" [src]="imageSource" alt="goute d'eau" draggable="false" (click)="generateImage($event)" />
+    <div id="image-container"></div>
+    <div class="upgrade-container">
+    </div>
+
+  </div>
+</main>
