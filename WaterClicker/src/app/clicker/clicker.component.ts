@@ -1,4 +1,4 @@
-import { Component, Renderer2, OnInit } from '@angular/core';
+import { Component, Renderer2, OnInit,HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-clicker',
@@ -11,10 +11,12 @@ export class ClickerComponent implements OnInit {
   imageSource = '../../assets/Images/eau.png';
   score: number = 0;
   type: string = 'eau';
+  torch: HTMLElement | null = null;
 
   constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
+    document.body.classList.add('dark-mode')
     this.score = parseInt(localStorage.getItem('Gouttes') || '0', 10);
   }
 
@@ -65,6 +67,8 @@ export class ClickerComponent implements OnInit {
     this.renderer.setStyle(element, 'transform', 'translate(-50%, -50%)');
     return element;
   }
+
+  
 
   private animateElement(element: HTMLElement, container: HTMLElement, duration: number): void {
     let currentY = parseInt(window.getComputedStyle(element).top, 10);

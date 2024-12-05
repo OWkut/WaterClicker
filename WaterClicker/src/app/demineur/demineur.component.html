@@ -1,0 +1,27 @@
+<div class="minesweeper">
+    <h1>Minesweeper</h1>
+    <button (click)="initializeGame()">Restart</button>
+    <div class="grid">
+      <div
+        *ngFor="let row of grid; let rowIndex = index"
+        class="row"
+      >
+        <div
+          *ngFor="let cell of row; let colIndex = index"
+          class="cell"
+          [class.revealed]="cell.isRevealed"
+          [class.mine]="cell.isRevealed && cell.hasMine"
+          [class.flagged]="cell.isFlagged"
+          (click)="revealCell(rowIndex, colIndex)"
+          (contextmenu)="flagCell($event, rowIndex, colIndex)"
+        >
+          <span *ngIf="cell.isRevealed && !cell.hasMine">
+            {{ cell.neighboringMines > 0 ? cell.neighboringMines : '' }}
+          </span>
+        </div>
+      </div>
+    </div>
+    <p *ngIf="gameOver">Game Over!</p>
+    <p *ngIf="victory">You Win!</p>
+  </div>
+  
