@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  showSubmenu: boolean = false;
 
+  toggleSubmenu(): void {
+    this.showSubmenu = !this.showSubmenu;
+  }
 }
