@@ -14,15 +14,14 @@
       <img [src]="imageSource" alt="goute d'eau" draggable="false" (click)="generateImage($event,1)" />
     </button>
     <div id="image-container"></div>
-
     <div class="upgrade-container">
-      <div class="upgrade-element" *ngFor="let autoClicker of autoClickers">
+      <div class="upgrade-element" *ngFor="let autoClicker of autoClickers" (click)="addUpgrade(autoClicker)">
         <img src="../../assets/Images/eau2.png" alt="{{ autoClicker.name }}" />
         <p>{{ autoClicker.name }}</p>
         <p>{{ autoClicker.production }}</p>
-        <strong>{{ autoClicker.cost ? autoClicker.cost : 'Gratuit' }}</strong>
+        <strong>Cout: {{ autoClicker.cost ? autoClicker.cost : 'Gratuit' }}</strong>
+        <p>Quantité : {{ autoClicker.count || 0 }}</p>
       </div>
     </div>
-
   </div>
 </main>

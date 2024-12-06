@@ -118,6 +118,7 @@ main {
 
 .main-container .upgrade-container {
   position: absolute;
+  overflow-y: auto;
   height: 390px;
   right: 50px;
   border-radius: 10px;
@@ -186,4 +187,3 @@ main {
   background-color: #fff;
   border-radius: 50%;
 }
-
