@@ -1,8 +1,14 @@
-.captcha-clicker{
-    width: 800px;
-    height: 400px;
-    position: absolute;
-    left: calc(50% - 550px);
-    top: 130px;
-    z-index: 3;
+.captcha-clicker {
+  width: 800px;
+  height: 400px;
+  position: absolute;
+  left: calc(50% - 550px);
+  top: 130px;
+  z-index: 3;
+  background-color: var(--color);
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 10px;
 }
