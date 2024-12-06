@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 interface Cell {
   hasMine: boolean;
@@ -18,10 +18,11 @@ interface Cell {
 export class DemineurComponent {
   rows = 8; // Nombre de lignes
   cols = 8; // Nombre de colonnes
-  mineCount = 10; // Nombre de mines
+  mineCount = 5; // Nombre de mines
   grid: Cell[][] = [];
   gameOver = false;
   victory = false;
+  @Output() gameResult = new EventEmitter<boolean>();
 
   ngOnInit() {
     this.initializeGame();
@@ -40,7 +41,7 @@ export class DemineurComponent {
           hasMine: false,
           isRevealed: false,
           isFlagged: false,
-          neighboringMines: 0,
+          neighboringMines: 10,
         });
       }
       this.grid.push(row);
@@ -154,6 +155,7 @@ export class DemineurComponent {
       }
     }
     this.victory = true;
+    this.gameResult.emit(this.victory);
     alert('Congratulations! You win!');
   }
 }

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Renderer2, OnInit } from '@angular/core';
+import { CaptchaComponent } from '../captcha/captcha.component';
 
 const Improvements = {
   Water: {
@@ -38,7 +39,7 @@ const Improvements = {
 @Component({
   selector: 'app-clicker',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CaptchaComponent, CommonModule],
   templateUrl: './clicker.component.html',
   styleUrls: ['./clicker.component.scss'],
 })
@@ -48,6 +49,7 @@ export class ClickerComponent implements OnInit {
   gain_passif: number = 0;
   type: string = 'eau';
   autoClickers: { id: number; name: string; cost?: number; production: string; count?: number }[] = [];
+  captchaValidate: boolean = false;
 
   constructor(private renderer: Renderer2) { }
 
@@ -61,6 +63,7 @@ export class ClickerComponent implements OnInit {
       this.addPassiveGain();
     }, 60000);
   }
+
 
   toggleImage(event: Event): void {
     this.type = (event.target as HTMLInputElement).checked ? 'sang' : 'eau';
