@@ -7,8 +7,8 @@
 
   <div class="header-right">
     <div class="submenu" [class.active]="showSubmenu">
-      <p>Francais</p>
-      <p>Minecraft</p>
+      <p (click)="changeFont('Français')">Français</p>
+      <p (click)="changeFont('minecraft')">Minecraft</p>
     </div>
   </div>
 </header>
