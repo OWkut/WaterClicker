@@ -9,6 +9,7 @@
   </button>
 
   <div class="header-right">
+    <h2 (click)="toggleSubmenu()">{{ selectedOption }}</h2>
     <div class="submenu" [class.active]="showSubmenu">
       <p (click)="changeFont('Français')">Français</p>
       <p (click)="changeFont('minecraft')">Minecraft</p>

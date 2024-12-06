@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { Component, Renderer2, OnInit } from '@angular/core';
 import { CaptchaComponent } from '../captcha/captcha.component';
 
@@ -39,7 +40,7 @@ const Improvements = {
 @Component({
   selector: 'app-clicker',
   standalone: true,
-  imports: [CaptchaComponent, CommonModule],
+  imports: [CaptchaComponent, CommonModule,NgFor],
   templateUrl: './clicker.component.html',
   styleUrls: ['./clicker.component.scss'],
 })

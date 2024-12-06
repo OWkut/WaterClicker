@@ -2,6 +2,7 @@ import { CommonModule, DOCUMENT } from '@angular/common';
 import { Component, OnInit, HostListener, Renderer2, Inject } from '@angular/core';
 import { CaptchaComponent } from '../captcha/captcha.component';
 
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -19,6 +20,7 @@ export class HeaderComponent {
 
   constructor(
     private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document,
   ) { }
   torch: HTMLElement | null = null;
 
@@ -58,9 +60,19 @@ export class HeaderComponent {
   }
 
   changeFont(font: string): void {
-    document.body.style.fontFamily = font;
+    if (font === 'Français') {
+      document.documentElement.style.setProperty('--app-font-family', 'Arial, Helvetica, sans-serif');
+        //this.renderer.setStyle(this.document.body, 'font-family', );
+    } else if (font === 'minecraft') {
+      document.documentElement.style.setProperty('--app-font-family', 'minecraft');
+        //this.renderer.setStyle(this.document.body, 'font-family', );
+    }
+
+    // Forcer un reflow pour garantir que les styles sont appliqués immédiatement
+    this.document.body.offsetHeight; // Ne fait rien mais force le recalcul du layout
+
     this.selectedOption = font;
     this.showSubmenu = false;
-  }
-
+}
+  
 }

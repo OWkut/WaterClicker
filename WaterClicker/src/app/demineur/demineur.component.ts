@@ -16,9 +16,9 @@ interface Cell {
   styleUrls: ['./demineur.component.scss'],
 })
 export class DemineurComponent {
-  rows = 8; // Nombre de lignes
-  cols = 8; // Nombre de colonnes
-  mineCount = 5; // Nombre de mines
+  rows = 8; 
+  cols = 8; 
+  mineCount = 10;
   grid: Cell[][] = [];
   gameOver = false;
   victory = false;
