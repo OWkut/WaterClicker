@@ -15,7 +15,6 @@ export class HeaderComponent {
 
   constructor(
     private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: Document
   ) { }
   torch: HTMLElement | null = null;
 
