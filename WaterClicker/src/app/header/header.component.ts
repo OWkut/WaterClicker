@@ -1,6 +1,10 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
 import { Component, OnInit, HostListener, Renderer2, Inject } from '@angular/core';
+<<<<<<< Updated upstream
 import { CaptchaComponent } from '../captcha/captcha.component';
+=======
+import { MatSnackBar } from '@angular/material/snack-bar';
+>>>>>>> Stashed changes
 
 @Component({
   selector: 'app-header',
@@ -19,6 +23,8 @@ export class HeaderComponent {
 
   constructor(
     private renderer: Renderer2,
+    @Inject(DOCUMENT) private document: Document,
+    private snackbar: MatSnackBar
   ) { }
   torch: HTMLElement | null = null;
 
@@ -58,9 +64,25 @@ export class HeaderComponent {
   }
 
   changeFont(font: string): void {
+<<<<<<< Updated upstream
     document.body.style.fontFamily = font;
     this.selectedOption = font;
     this.showSubmenu = false;
   }
 
+=======
+    if (font === 'Français') {
+        this.renderer.setStyle(this.document.body, 'font-family', 'Arial, Helvetica, sans-serif');
+    } else if (font === 'minecraft') {
+        this.renderer.setStyle(this.document.body, 'font-family', 'minecraft');
+    }
+
+    // Forcer un reflow pour garantir que les styles sont appliqués immédiatement
+    this.document.body.offsetHeight; // Ne fait rien mais force le recalcul du layout
+
+    this.selectedOption = font;
+    this.showSubmenu = false;
+}
+  
+>>>>>>> Stashed changes
 }

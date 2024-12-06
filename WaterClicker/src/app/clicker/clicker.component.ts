@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 import { CommonModule } from '@angular/common';
+=======
+import { NgFor } from '@angular/common';
+>>>>>>> Stashed changes
 import { Component, Renderer2, OnInit } from '@angular/core';
 import { CaptchaComponent } from '../captcha/captcha.component';
 
@@ -39,7 +43,11 @@ const Improvements = {
 @Component({
   selector: 'app-clicker',
   standalone: true,
+<<<<<<< Updated upstream
   imports: [CaptchaComponent, CommonModule],
+=======
+  imports: [NgFor],
+>>>>>>> Stashed changes
   templateUrl: './clicker.component.html',
   styleUrls: ['./clicker.component.scss'],
 })
