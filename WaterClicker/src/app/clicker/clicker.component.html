@@ -16,10 +16,11 @@
     <div id="image-container"></div>
 
     <div class="upgrade-container">
-      <div class="upgrade-element">
-        <img src="../../assets/Images/eau2.png" />
-        <p>Text</p>
-        <strong>Prix</strong>
+      <div class="upgrade-element" *ngFor="let autoClicker of autoClickers">
+        <img src="../../assets/Images/eau2.png" alt="{{ autoClicker.name }}" />
+        <p>{{ autoClicker.name }}</p>
+        <p>{{ autoClicker.production }}</p>
+        <strong>{{ autoClicker.cost ? autoClicker.cost : 'Gratuit' }}</strong>
       </div>
     </div>
 
