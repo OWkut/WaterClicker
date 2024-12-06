@@ -4,7 +4,7 @@ header {
   align-items: center;
   padding: 10px 60px 10px 20px;
   background-color: #fff;
-  box-shadow: rgba(33, 150, 243, 0.4) 5px 5px, rgba(33, 150, 243, 0.3) 10px 10px, rgba(33, 150, 243, 0.2) 15px 15px, rgba(33, 150, 243, 0.1) 20px 20px, rgba(33, 150, 243, 0.05) 25px 25px;
+  box-shadow: var(--border-one) 5px 5px, var(--border-two) 10px 10px, var(--border-three) 15px 15px, var(--border-four) 20px 20px, var(--border-five) 25px 25px;
 }
 
 .header-left,
@@ -20,7 +20,7 @@ header {
 }
 
 .header-right h2 {
-  border: 1px solid #2196f3;
+  border: 1px solid var(--color);
   padding: 4px 20px;
   margin: -4px -20px;
   font-weight: normal;
@@ -37,7 +37,7 @@ header {
   right: 40px;
   width: 140px;
   z-index: 10;
-  border: 1px solid #2196f3;
+  border: 1px solid var(--color);
   flex-direction: column;
   border-top: none;
   border-radius: 0px 0px 10px 10px;
@@ -54,4 +54,18 @@ header {
 
 .header-right .submenu p:hover {
   background-color: #f0f0f0;
+}
+
+#dark-light-btn {
+  background-color: #fff;
+  border: none;
+}
+
+#dark-light-btn img {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  margin: -5px;
+  border-radius: 50%;
+  border: 2px solid var(--color);
 }

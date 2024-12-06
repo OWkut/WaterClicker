@@ -7,7 +7,7 @@
 
     <div id="counter-drop">
       <img [src]="imageSource" alt="goute d'eau" draggable="false" (click)="generateImage($event,10)" />
-      <p>{{score}}</p>
+      <p>{{score | number: '1.0-0'}}</p>
     </div>
 
     <button id="clicker-icone" (click)="increment()">

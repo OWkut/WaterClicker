@@ -10,13 +10,25 @@ import { Component, OnInit, HostListener, Renderer2, Inject } from '@angular/cor
 })
 export class HeaderComponent {
   showSubmenu: boolean = false;
-  selectedOption: string = 'Francais'; 
+  selectedOption: string = 'Francais';
   fontFamily: string = 'minecraft';
+  imageSource: string = '../../assets/lune.png';
+  etatBtn: string = "lune";
 
   constructor(
     private renderer: Renderer2,
   ) { }
   torch: HTMLElement | null = null;
+
+  toggleImage(): void {
+    if (this.etatBtn == "lune") {
+      this.imageSource = "../../assets/soleil.png";
+      this.etatBtn = "soleil"
+    } else {
+      this.etatBtn = "lune"
+      this.imageSource = "../../assets/lune.png";
+    }
+  }
 
   toggleTheme(): void {
     const isDarkMode = document.body.classList.contains('dark-mode');
@@ -30,7 +42,7 @@ export class HeaderComponent {
 
     const torch = document.querySelector('.torch');
     if (torch) {
-      torch.classList.toggle('dark-mode', !isDarkMode); 
+      torch.classList.toggle('dark-mode', !isDarkMode);
     }
   }
 
@@ -39,9 +51,9 @@ export class HeaderComponent {
   }
 
   changeFont(font: string): void {
-    document.body.style.fontFamily = font; 
-    this.selectedOption = font; 
+    document.body.style.fontFamily = font;
+    this.selectedOption = font;
     this.showSubmenu = false;
   }
-  
+
 }

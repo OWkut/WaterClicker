@@ -3,7 +3,10 @@
     <img id="logo-header" src="../../assets/Images/eau2.png" alt="logo" draggable="false" />
     <p>WaterClicker</p>
   </div>
-  <button (click)="toggleTheme()">Dark/Light</button>
+
+  <button id="dark-light-btn" (click)="toggleTheme()">
+    <img [src]="etatBtn === 'lune' ? '../../assets/lune.png' : '../../assets/soleil.png'" alt="dark">
+  </button>
 
   <div class="header-right">
     <div class="submenu" [class.active]="showSubmenu">

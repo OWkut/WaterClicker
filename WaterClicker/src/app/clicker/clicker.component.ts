@@ -5,7 +5,7 @@ const Improvements = {
   Water: {
     autoClickers: [
       { id: 0, name: "Pipette", cost: 10, production: "0.1" },
-      { id: 1, name: "Saut", cost: 500, production: "5" },
+      { id: 1, name: "Seau", cost: 500, production: "5" },
       { id: 2, name: "Plongeur", cost: 6000, production: "60" },
       { id: 3, name: "Gyres océaniques", cost: 15000, production: "150" },
       { id: 4, name: "Ferme à Plancton", cost: 50000, production: "500" },
@@ -66,6 +66,18 @@ export class ClickerComponent implements OnInit {
     this.type = (event.target as HTMLInputElement).checked ? 'sang' : 'eau';
     this.imageSource = `../../assets/Images/${this.type}.png`;
     this.updateAutoClickers();
+    this.toggleTheme(event);
+  }
+
+  toggleTheme(event: Event): void {
+    const isChecked = (event.target as HTMLInputElement).checked;
+    const rootElement = document.documentElement;
+
+    if (isChecked) {
+      rootElement.classList.add('red-theme');
+    } else {
+      rootElement.classList.remove('red-theme');
+    }
   }
 
   updateAutoClickers(): void {
