@@ -1,17 +1,22 @@
-import { Component,OnInit,HostListener } from '@angular/core';
+import { Component, Renderer2, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
   showSubmenu: boolean = false;
-  torch: HTMLElement | null = null; 
+  selectedOption = false;
 
-  
+  constructor(
+    private renderer: Renderer2,
+  ) { }
+  torch: HTMLElement | null = null;
+
+
 
   toggleTheme(): void {
     const isDarkMode = document.body.classList.contains('dark-mode');
@@ -25,11 +30,12 @@ export class HeaderComponent {
 
     const torch = document.querySelector('.torch');
     if (torch) {
-        torch.classList.toggle('dark-mode', !isDarkMode); // Synchronisation
+      torch.classList.toggle('dark-mode', !isDarkMode); // Synchronisation
     }
   }
 
   toggleSubmenu(): void {
     this.showSubmenu = !this.showSubmenu;
   }
+
 }

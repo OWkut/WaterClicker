@@ -16,10 +16,6 @@ export class ClickerComponent implements OnInit {
   constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.torch = document.createElement('div');
-    this.torch.classList.add('torch');
-    this.torch.classList.toggle('dark-mode', true);
-    document.body.appendChild(this.torch);
     document.body.classList.add('dark-mode')
     this.score = parseInt(localStorage.getItem('Gouttes') || '0', 10);
   }
@@ -87,16 +83,6 @@ export class ClickerComponent implements OnInit {
       this.renderer.removeChild(container, element);
     }, duration);
   }
-
-  @HostListener('mousemove', ['$event']) onMouseMove(event: MouseEvent): void {
-    if (this.torch) {
-      this.torch.style.left = `${event.pageX}px`;
-      this.torch.style.top = `${event.pageY}px`;
-    }
-    document.body.classList.add('light-area');
-  }
-
-
 
   private fadeOutElement(element: HTMLElement, container: HTMLElement, duration: number): void {
     setTimeout(() => {
