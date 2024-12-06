@@ -62,10 +62,8 @@ export class HeaderComponent {
   changeFont(font: string): void {
     if (font === 'Français') {
       document.documentElement.style.setProperty('--app-font-family', 'Arial, Helvetica, sans-serif');
-        //this.renderer.setStyle(this.document.body, 'font-family', );
     } else if (font === 'minecraft') {
       document.documentElement.style.setProperty('--app-font-family', 'minecraft');
-        //this.renderer.setStyle(this.document.body, 'font-family', );
     }
 
     // Forcer un reflow pour garantir que les styles sont appliqués immédiatement
