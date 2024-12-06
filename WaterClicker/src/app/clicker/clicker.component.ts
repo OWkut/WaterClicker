@@ -72,6 +72,11 @@ export class ClickerComponent implements OnInit {
     this.toggleTheme(event);
   }
 
+  receiveFromCaptcha(captcha: boolean) {
+    this.captchaValidate = captcha;
+    console.log('Variable reçue dans HomeComponent:', this.captchaValidate);
+  }
+
   toggleTheme(event: Event): void {
     const isChecked = (event.target as HTMLInputElement).checked;
     const rootElement = document.documentElement;
