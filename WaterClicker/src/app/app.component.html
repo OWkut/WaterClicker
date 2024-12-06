@@ -8,6 +8,13 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <app-header></app-header>
 <app-clicker></app-clicker>
+<button 
+  class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+  (click)="popup.openPopup()"
+>
+  Ouvrir le Captcha
+</button>
+<app-captcha #popup (action)="onPopupAction()"></app-captcha>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
