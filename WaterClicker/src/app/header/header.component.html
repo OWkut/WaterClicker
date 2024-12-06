@@ -8,8 +8,8 @@
   <div class="header-right">
     <h2 (click)="toggleSubmenu()">{{ selectedOption }}</h2>
     <div class="submenu" [class.active]="showSubmenu">
-      <p (click)="selectOption('Francais', 'sans-serif')">Francais</p>
-      <p (click)="selectOption('Minecraft', 'minecraft')">Minecraft</p>
+      <p (click)="changeFont('Français')">Français</p>
+      <p (click)="changeFont('minecraft')">Minecraft</p>
     </div>
   </div>
 </header>
