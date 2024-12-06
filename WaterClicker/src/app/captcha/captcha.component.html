@@ -1,12 +1,11 @@
-<div  class="popup-overlay" *ngIf="isVisible">
+<div class="popup-overlay" *ngIf="isVisible">
   <div class="popup">
     <div class="popup-header">
       <h2>Captcha !</h2>
       <button class="close-btn" (click)="closePopup()">X</button>
     </div>
     <div class="popup-body">
-      <app-demineur></app-demineur>
-      <button [disabled]="!isCaptchaValid()" (click)="onSubmit()">Soumettre</button>
+      <app-demineur (gameResult) = "onGameResult($event)"></app-demineur>
     </div>
     <div class="popup-footer">
       <button (click)="closePopup()">Close</button>

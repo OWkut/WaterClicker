@@ -130,6 +130,17 @@ main {
   box-shadow: rgba(33, 150, 243, 0.4) 5px 5px, rgba(33, 150, 243, 0.3) 10px 10px, rgba(33, 150, 243, 0.2) 15px 15px, rgba(33, 150, 243, 0.1) 20px 20px, rgba(33, 150, 243, 0.05) 25px 25px;
 }
 
+.captcha-upgrades{
+  position: absolute;
+  height: 390px;
+  right: 50px;    
+  border-radius: 10px;
+  width: 250px;
+  padding: 12px 0 2px 0;
+  top: 130px;
+  z-index: 4;
+}
+
 .upgrade-container .upgrade-element {
   display: grid;
   grid-template-columns: 50px auto 50px;

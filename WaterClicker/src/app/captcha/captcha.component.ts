@@ -12,8 +12,14 @@ import { CommonModule } from '@angular/common';
 })
 export class CaptchaComponent {
   isVisible = false;
+  gameStatus: string = '';
 
   @Output() action = new EventEmitter<void>();
+  @Output() gameVictory = new EventEmitter<boolean>();
+
+  onGameResult(result: any) {
+      this.gameVictory.emit(result);
+  }
 
   openPopup(): void {
     this.isVisible = true;

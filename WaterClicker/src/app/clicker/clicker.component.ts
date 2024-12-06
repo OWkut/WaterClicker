@@ -1,4 +1,6 @@
 import { Component, Renderer2, OnInit } from '@angular/core';
+import { CaptchaComponent } from '../captcha/captcha.component';
+import { CommonModule } from '@angular/common';
 
 const Improvements = {
   Water: {
@@ -63,7 +65,7 @@ const Improvements = {
 @Component({
   selector: 'app-clicker',
   standalone: true,
-  imports: [],
+  imports: [CaptchaComponent, CommonModule],
   templateUrl: './clicker.component.html',
   styleUrls: ['./clicker.component.scss']
 })
@@ -72,6 +74,7 @@ export class ClickerComponent implements OnInit {
   score: number = 0;
   type: string = 'eau';
   autoClickers: { id: number; name: string; production: string; cost?: string }[] = [];
+  captchaValidate: boolean = false;
 
   constructor(private renderer: Renderer2) { }
 
@@ -79,6 +82,11 @@ export class ClickerComponent implements OnInit {
     document.body.classList.add('dark-mode');
     this.score = parseInt(localStorage.getItem('Gouttes') || '0', 10);
     this.updateAutoClickers();
+  }
+
+  receiveFromCaptcha(captcha: boolean) {
+    this.captchaValidate = captcha;
+    console.log('Variable reçue dans HomeComponent:', this.captchaValidate);
   }
 
   toggleImage(event: Event): void {

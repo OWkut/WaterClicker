@@ -55,3 +55,12 @@ header {
 .header-right .submenu p:hover {
   background-color: #f0f0f0;
 }
+
+.captcha-header{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 80px;
+  width: 100%;
+  z-index: 11;
+}

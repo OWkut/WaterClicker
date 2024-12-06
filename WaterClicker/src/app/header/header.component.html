@@ -11,4 +11,14 @@
       <p (click)="changeFont('minecraft')">Minecraft</p>
     </div>
   </div>
+
+  <div *ngIf="captchaValidate == false">
+    <button 
+  class="captcha-header"
+  (click)="popup.openPopup()"
+>
+  Ouvrir le Captcha
+    </button>
+    <app-captcha #popup (gameVictory)="receiveFromCaptcha($event)"></app-captcha>
+</div>
 </header>

@@ -1,11 +1,14 @@
 <div>
 <app-header></app-header>
 <app-clicker></app-clicker>
-<button 
-  class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+<div *ngIf="captchaValidate == false">
+    <button 
+  class="captcha-clicker"
   (click)="popup.openPopup()"
 >
   Ouvrir le Captcha
-</button>
-<app-captcha #popup></app-captcha>
+    </button>
+    <app-captcha #popup (gameVictory)="receiveFromCaptcha($event)"></app-captcha>
+</div>
+
 </div>

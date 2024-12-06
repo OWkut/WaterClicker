@@ -1,10 +1,11 @@
-import { DOCUMENT } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { Component, OnInit, HostListener, Renderer2, Inject } from '@angular/core';
+import { CaptchaComponent } from '../captcha/captcha.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, CaptchaComponent],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
@@ -12,6 +13,7 @@ export class HeaderComponent {
   showSubmenu: boolean = false;
   selectedOption: string = 'Francais'; 
   fontFamily: string = 'minecraft';
+  captchaValidate: boolean = false;
 
   constructor(
     private renderer: Renderer2,
@@ -32,6 +34,11 @@ export class HeaderComponent {
     if (torch) {
       torch.classList.toggle('dark-mode', !isDarkMode); 
     }
+  }
+
+  receiveFromCaptcha(captcha: boolean) {
+    this.captchaValidate = captcha;
+    console.log('Variable reçue dans HomeComponent:', this.captchaValidate);
   }
 
   toggleSubmenu(): void {

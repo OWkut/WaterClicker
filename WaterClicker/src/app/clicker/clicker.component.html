@@ -24,5 +24,15 @@
       </div>
     </div>
 
+    <div *ngIf="captchaValidate == false">
+      <button 
+    class="captcha-upgrades"
+    (click)="popup.openPopup()"
+  >
+    Ouvrir le Captcha
+      </button>
+      <app-captcha #popup (gameVictory)="receiveFromCaptcha($event)"></app-captcha>
+  </div>
+
   </div>
 </main>
