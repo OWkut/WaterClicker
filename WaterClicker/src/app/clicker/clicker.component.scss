@@ -10,7 +10,8 @@
   z-index: 2;
   background: transparent;
   border: none;
-  border: 2px solid rgba(33, 150, 243, 0.4);
+  border: 2px solid var(--border-one);
+  box-shadow: var(--border-one) 5px 5px, var(--border-two) 10px 10px, var(--border-three) 15px 15px, var(--border-four) 20px 20px, var(--border-five) 25px 25px;
   box-shadow: rgba(33, 150, 243, 0.4) 5px 5px, rgba(33, 150, 243, 0.3) 10px 10px, rgba(33, 150, 243, 0.2) 15px 15px, rgba(33, 150, 243, 0.1) 20px 20px, rgba(33, 150, 243, 0.05) 25px 25px;
 }
 
@@ -118,6 +119,7 @@ main {
 
 .main-container .upgrade-container {
   position: absolute;
+  overflow-y: auto;
   height: 390px;
   right: 50px;
   border-radius: 10px;
@@ -126,8 +128,8 @@ main {
   top: 130px;
   z-index: 3;
   background-color: #fff;
-  border: 2px solid rgba(33, 150, 243, 0.4);
-  box-shadow: rgba(33, 150, 243, 0.4) 5px 5px, rgba(33, 150, 243, 0.3) 10px 10px, rgba(33, 150, 243, 0.2) 15px 15px, rgba(33, 150, 243, 0.1) 20px 20px, rgba(33, 150, 243, 0.05) 25px 25px;
+  border: 2px solid var(--border-one);
+  box-shadow: var(--border-one) 5px 5px, var(--border-two) 10px 10px, var(--border-three) 15px 15px, var(--border-four) 20px 20px, var(--border-five) 25px 25px;
 }
 
 .captcha-upgrades{
@@ -149,7 +151,7 @@ main {
   border-radius: 10px;
   user-select: none;
   cursor: pointer;
-  background-color: #2196f3;
+  background-color: var(--color);
   color: #fff;
 }
 
@@ -188,7 +190,7 @@ main {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  background-color: #2196F3;
+  background-color: var(--color);
 }
 
 #counter-drop img {
@@ -197,4 +199,3 @@ main {
   background-color: #fff;
   border-radius: 50%;
 }
-

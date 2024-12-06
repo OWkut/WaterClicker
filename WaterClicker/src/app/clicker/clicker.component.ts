@@ -1,65 +1,39 @@
+import { CommonModule } from '@angular/common';
 import { Component, Renderer2, OnInit } from '@angular/core';
 import { CaptchaComponent } from '../captcha/captcha.component';
-import { CommonModule } from '@angular/common';
 
 const Improvements = {
   Water: {
-    upgrades: [
-      { id: 1, name: "Augmentation des courants marins", cost: 400, effect: "+20% prod [Auto-Clicker]", repeatable: 5 },
-      { id: 2, name: "Agriculture", cost: 13400, effect: "Débloque les fermes et le centre de collecte, -20% prod [Auto-Clicker]" },
-      { id: 3, name: "Densité de l'eau", cost: 429050, effect: "+50% prod [Auto-Clicker], +20% prod [Click]", repeatable: 4 },
-      { id: 4, name: "Centre d'épuration", cost: 764000, effect: "Débloque l'épurateur" },
-      { id: 5, name: "Plancton", cost: 2485000, effect: "+15% prod [Auto-Clicker], Débloque le purificateur d'eau" },
-      { id: 6, name: "Voyage vers Encelade", cost: 800000900, effect: "Débloque navette supersonique" },
-      { id: 7, name: "Restauration après une marée noire", cost: 32850045000, effect: "+60% prod [Auto-Clicker], +30% prod [Click]", repeatable: 3 },
-      { id: 8, name: "Nettoyage des océans", cost: 187548000000, effect: "+80% prod [Click + Prod]", repeatable: 2 },
-      { id: 9, name: "Eau pure", cost: 545000000000, effect: "+110% d'eau [Click + Prod]" },
-      { id: 10, name: "Droit de l'eau", cost: 85457000000000, effect: "Permet de débloquer 'Corps Parfait'" },
-      { id: 11, name: "Équilibre", cost: 999999999999999999999, effect: "+infini [Click + Prod]" }
-    ],
     autoClickers: [
-      { id: 0, name: "Pipette", production: "+0.1 eau /min" },
-      { id: 1, name: "Saut", production: "+5 eau /min" },
-      { id: 2, name: "Plongeur", production: "+60 eau /min" },
-      { id: 3, name: "Gyres océaniques", production: "+150 eau /min" },
-      { id: 4, name: "Ferme à Plancton", production: "+500 eau /min" },
-      { id: 5, name: "Nutriments", production: "+860 eau /min" },
-      { id: 6, name: "Microbiome marin", production: "+1860 eau /min" },
-      { id: 7, name: "Épurateur", cost: "-100 sang /min", production: "+4600 eau /min" },
-      { id: 8, name: "Failles tectoniques", production: "+18700 eau /min" },
-      { id: 9, name: "Régulation thermique de l’océan", production: "+92000 eau /min" },
-      { id: 10, name: "Purificateur d'eau", production: "+320000 eau /min" },
-      { id: 11, name: "Navette supersonique", production: "+985000 eau /min" }
-    ]
+      { id: 0, name: "Pipette", cost: 10, production: "0.1" },
+      { id: 1, name: "Seau", cost: 500, production: "5" },
+      { id: 2, name: "Plongeur", cost: 6000, production: "60" },
+      { id: 3, name: "Gyres océaniques", cost: 15000, production: "150" },
+      { id: 4, name: "Ferme à Plancton", cost: 50000, production: "500" },
+      { id: 5, name: "Nutriments", cost: 86000, production: "860" },
+      { id: 6, name: "Microbiome marin", cost: 186000, production: "1860" },
+      { id: 7, name: "Épurateur", cost: 460000, production: "4600" },
+      { id: 8, name: "Failles tectoniques", cost: 1870000, production: "18700" },
+      { id: 9, name: "Régulation thermique de l’océan", cost: 9200000, production: "92000" },
+      { id: 10, name: "Purificateur d'eau", cost: 320000, production: "320000" },
+      { id: 11, name: "Navette supersonique", cost: 98500000, production: "985000" },
+    ],
   },
   Blood: {
-    upgrades: [
-      { id: 1, name: "Augmentation de la circulation sanguine", cost: 950, effect: "+20% prod [Click]", repeatable: 5 },
-      { id: 2, name: "Vitamine", cost: 80000, effect: "+1200 /min, Débloque le purificateur d'air" },
-      { id: 3, name: "Résistance de la peau", cost: 240000, effect: "+20% prod [Auto-Clicker], +50% prod [Click]", repeatable: 5 },
-      { id: 4, name: "Expérience interdite", cost: 1200000, effect: "Débloque la transfusion" },
-      { id: 5, name: "Eco-Agriculture", cost: 58000000, effect: "Supprime le malus d'Agriculture, +10% prod [Auto-Clicker]" },
-      { id: 6, name: "Exo-squelette", cost: 286000000, effect: "Débloque champ d'extermination de zombie" },
-      { id: 7, name: "Cicatrisation des plaies", cost: 7258000000, effect: "+60% prod [Click], +30% prod [Auto-Clicker]", repeatable: 4 },
-      { id: 8, name: "Optimisation du corps", cost: 86753000000, effect: "+80% de sang [Click + Prod]", repeatable: 2 },
-      { id: 9, name: "Corps parfait", cost: 980000000000, effect: "+110% de sang [Click + Prod]" },
-      { id: 10, name: "Humain aquatique", cost: 60980000000000, effect: "Débloque 'Équilibre'" },
-      { id: 11, name: "Équilibre", cost: 999999999999999999999, effect: "+infini [Click + Prod]" }
-    ],
     autoClickers: [
-      { id: 1, name: "Seringue", production: "+5 sang /min" },
-      { id: 2, name: "Infirmier", production: "+60 sang /min" },
-      { id: 3, name: "Centre de collecte", production: "+150 sang /min" },
-      { id: 4, name: "Purificateur d'air", production: "+500 sang /min" },
-      { id: 5, name: "Acides aminés", production: "+860 sang /min" },
-      { id: 6, name: "Microbiome intestinal", production: "+1860 sang /min" },
-      { id: 7, name: "Transfusion", cost: "-100 eau /min", production: "+4600 sang /min" },
-      { id: 8, name: "Articulations", production: "+18700 sang /min" },
-      { id: 9, name: "Régulation température corporelle", production: "+92000 eau /min" },
-      { id: 10, name: "Cœur", production: "+320000 eau /min" },
-      { id: 11, name: "Champ d'extermination zombie", production: "+985000 eau /min" }
-    ]
-  }
+      { id: 1, name: "Seringue", cost: 500, production: "5" },
+      { id: 2, name: "Infirmier", cost: 600, production: "60" },
+      { id: 3, name: "Centre de collecte", cost: 15000, production: "150" },
+      { id: 4, name: "Purificateur d'air", cost: 50000, production: "500" },
+      { id: 5, name: "Acides aminés", cost: 86000, production: "860" },
+      { id: 6, name: "Microbiome intestinal", cost: 186000, production: "1860" },
+      { id: 7, name: "Transfusion", cost: 460000, production: "4600" },
+      { id: 8, name: "Articulations", cost: 18700, production: "18700" },
+      { id: 9, name: "Régulation température corporelle", cost: 9200000, production: "92000" },
+      { id: 10, name: "Cœur", cost: 32000000, production: "320000" },
+      { id: 11, name: "Champ d'extermination zombie", cost: 98500000, production: "985000" },
+    ],
+  },
 };
 
 @Component({
@@ -67,13 +41,14 @@ const Improvements = {
   standalone: true,
   imports: [CaptchaComponent, CommonModule],
   templateUrl: './clicker.component.html',
-  styleUrls: ['./clicker.component.scss']
+  styleUrls: ['./clicker.component.scss'],
 })
 export class ClickerComponent implements OnInit {
   imageSource = '../../assets/Images/eau.png';
   score: number = 0;
+  gain_passif: number = 0;
   type: string = 'eau';
-  autoClickers: { id: number; name: string; production: string; cost?: string }[] = [];
+  autoClickers: { id: number; name: string; cost?: number; production: string; count?: number }[] = [];
   captchaValidate: boolean = false;
 
   constructor(private renderer: Renderer2) { }
@@ -82,21 +57,41 @@ export class ClickerComponent implements OnInit {
     document.body.classList.add('dark-mode');
     this.score = parseInt(localStorage.getItem('Gouttes') || '0', 10);
     this.updateAutoClickers();
+    this.gain_passif = this.getAutoClickerProduction()
+
+    setInterval(() => {
+      this.addPassiveGain();
+    }, 60000);
   }
 
-  receiveFromCaptcha(captcha: boolean) {
-    this.captchaValidate = captcha;
-    console.log('Variable reçue dans HomeComponent:', this.captchaValidate);
-  }
 
   toggleImage(event: Event): void {
     this.type = (event.target as HTMLInputElement).checked ? 'sang' : 'eau';
     this.imageSource = `../../assets/Images/${this.type}.png`;
     this.updateAutoClickers();
+    this.toggleTheme(event);
+  }
+
+  toggleTheme(event: Event): void {
+    const isChecked = (event.target as HTMLInputElement).checked;
+    const rootElement = document.documentElement;
+
+    if (isChecked) {
+      rootElement.classList.add('red-theme');
+    } else {
+      rootElement.classList.remove('red-theme');
+    }
   }
 
   updateAutoClickers(): void {
-    this.autoClickers = this.type === 'eau' ? Improvements.Water.autoClickers : Improvements.Blood.autoClickers;
+    const savedUpgrades = JSON.parse(localStorage.getItem('upgrades') || '[]');
+    this.autoClickers =
+      this.type === 'eau' ? Improvements.Water.autoClickers : Improvements.Blood.autoClickers;
+
+    this.autoClickers.forEach((autoClicker) => {
+      const matchingUpgrade = savedUpgrades.find((item: any) => item.id === autoClicker.id);
+      autoClicker.count = matchingUpgrade ? matchingUpgrade.count : 0;
+    });
   }
 
   increment(): void {
@@ -104,9 +99,30 @@ export class ClickerComponent implements OnInit {
     localStorage.setItem('Gouttes', this.score.toString());
   }
 
+  addUpgrade(autoClicker: any): void {
+    if (autoClicker.cost <= this.score) {
+      this.score -= autoClicker.cost;
+      const savedUpgrades = JSON.parse(localStorage.getItem('upgrades') || '[]');
+
+      const existingUpgrade = savedUpgrades.find((item: any) => item.id === autoClicker.id);
+
+      if (!existingUpgrade) {
+        savedUpgrades.push({ id: autoClicker.id, name: autoClicker.name, count: 1 });
+      } else {
+        existingUpgrade.count += 1;
+      }
+
+      localStorage.setItem('upgrades', JSON.stringify(savedUpgrades));
+
+      this.updateAutoClickers();
+    }
+  }
+
   generateImage(event: MouseEvent, value: number): void {
     const { clientX: x, clientY: y } = event;
+
     const newImage = this.createElement('img', `../../assets/Images/${this.type}2.png`, x, y);
+
     const valueText = this.createElement('p', `+${value}`, x, y - 30, true);
 
     const imageContainer = document.getElementById('image-container');
@@ -115,6 +131,7 @@ export class ClickerComponent implements OnInit {
       this.renderer.appendChild(imageContainer, valueText);
 
       this.animateElement(newImage, imageContainer, 500);
+
       this.fadeOutElement(valueText, imageContainer, 500);
     }
   }
@@ -127,6 +144,7 @@ export class ClickerComponent implements OnInit {
     isText: boolean = false
   ): HTMLElement {
     const element = this.renderer.createElement(tag);
+
     if (isText) {
       this.renderer.appendChild(element, this.renderer.createText(content));
       this.renderer.addClass(element, 'generated-text');
@@ -134,6 +152,7 @@ export class ClickerComponent implements OnInit {
       this.renderer.setAttribute(element, 'src', content);
       this.renderer.addClass(element, 'generated-image');
     }
+
     this.renderer.setStyle(element, 'position', 'absolute');
     this.renderer.setStyle(element, 'top', `${y}px`);
     this.renderer.setStyle(element, 'left', `${x}px`);
@@ -161,5 +180,31 @@ export class ClickerComponent implements OnInit {
       setTimeout(() => this.renderer.removeChild(container, element), 300);
     }, duration);
   }
+
+  getAutoClickerProduction(): number {
+    const savedUpgrades = JSON.parse(localStorage.getItem('upgrades') || '[]');
+    console.log('Saved Upgrades:', savedUpgrades);
+
+    let totalProduction = 0;
+
+    for (const upgrade of savedUpgrades) {
+      const autoClicker = this.autoClickers.find((item) => item.id === upgrade.id);
+      console.log(autoClicker, "AUTO CLICKER")
+      if (autoClicker) {
+        const production = parseFloat(autoClicker.production) || 0;
+        const count = upgrade.count || 0;
+        totalProduction += production * count;
+      }
+    }
+
+    return totalProduction;
+  }
+
+  addPassiveGain(): void {
+    console.log(this.gain_passif)
+    this.score += this.gain_passif;
+    localStorage.setItem('Gouttes', this.score.toString());
+  }
 }
+
 

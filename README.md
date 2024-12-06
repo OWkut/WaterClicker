@@ -88,31 +88,44 @@
 
 
 ## Auto-Clicker :
+### Eau :
 #### 0-Pipette
+    [ - 10 ]
     +0.1 eau /min
 #### 1-Saut
+    [ - 76 ]
     +5 eau /min
 #### 2-Plongeur
+    [ - 953 ]
     +60 eau /min
 #### 3-Gyres océaniques
+    [ - 1 200 ]
     +150 eau /min
 #### 4-Ferme à Plancton
+    [ - 5 000 ]
     +500 eau /min
 #### 5-Nutriments
+    [ - 14 000 ]
     +860 eau /min
 #### 6-Microbiome marin
+    [ - 86 000 ]
     +1 860 eau /min
 #### 7-Epuratareur
+    [ - 120 000 ]
     -100 sang /min
     +4 600 eau /min
 #### 8-Failles tectoniques
+    [ - 856 000 ]
     +18 700 eau /min
 #### 9-Régulation thermique de l’océan
+    [ - 10 582 000 ]
     +92 000 eau /min
 #### 10-Purificateur d'eau
-    +320 000 eau /min
+    [ - 85 000 000 ]
+    +820 000 eau /min
 #### 11-Navette supersonique
-    +985 000 eau /min
+    [ - 1 856 000 000 ]
+    +15 985 000 eau /min
 
 
 ## Sang
